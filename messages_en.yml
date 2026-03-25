@@ -1,0 +1,254 @@
+# AntiESP English Language File
+# Plugin messages and prompt texts
+
+# Plugin Information
+plugin:
+  name: "AntiESP"
+  description: "Anti-ESP Plugin"
+  version: "Version"
+  author: "Author"
+  prefix: "&6[AntiESP] &r"
+
+# Common Messages
+common:
+  enabled: "Enabled"
+  disabled: "Disabled"
+  on: "On"
+  off: "Off"
+  yes: "Yes"
+  no: "No"
+  success: "Success"
+  failed: "Failed"
+  error: "Error"
+  warning: "Warning"
+  info: "Info"
+  loading: "Loading..."
+  saving: "Saving..."
+  reloading: "Reloading..."
+
+# Command Messages
+commands:
+  # Help Messages
+  help:
+    header: "&6=== AntiESP Help ==="
+    usage: "Usage"
+    description: "Description"
+    permission: "Permission"
+    aliases: "Aliases"
+    
+    # Specific Commands
+    reload:
+      description: "Reload plugin configuration"
+      usage: "/antiesp reload"
+      
+    status:
+      description: "View plugin status"
+      usage: "/antiesp status"
+      
+    debug:
+      description: "Toggle debug mode"
+      usage: "/antiesp debug <on|off>"
+      
+    info:
+      description: "View plugin information"
+      usage: "/antiesp info"
+      
+    stats:
+      description: "View personal statistics"
+      usage: "/antiesp stats"
+      
+    strict:
+      description: "Strict mode settings"
+      usage: "/antiesp strict <enable|disable|threshold>"
+      
+    language:
+      description: "Language settings"
+      usage: "/antiesp lang <language_code>"
+      
+  # Command Execution Results
+  reload:
+    success: "&aConfiguration reloaded successfully!"
+    failed: "&cError occurred while reloading configuration: {error}"
+    
+  debug:
+    enabled: "&aDebug mode enabled"
+    disabled: "&cDebug mode disabled"
+    usage: "&cUsage: /antiesp debug <on|off>"
+    
+  strict:
+    # Strict Mode Status
+    status_header: "&6=== Strict Mode Settings ==="
+    current_status: "&eCurrent Status: &f{status}"
+    blocking_threshold: "&eBlocking Threshold: &f{threshold}%"
+    multi_angle_check: "&eMulti-Angle Check: &f{status}"
+    multi_angle_radius: "&eMulti-Angle Radius: &f{radius}"
+    
+    # Strict Mode Operations
+    enabled: "&aStrict mode enabled"
+    disabled: "&cStrict mode disabled"
+    
+    # Threshold Settings
+    threshold_updated: "&aBlocking threshold set to: {threshold}%"
+    threshold_invalid: "&cThreshold must be between 0.0 and 1.0"
+    threshold_usage: "&cUsage: /antiesp strict threshold <0.0-1.0>"
+    
+    # Threshold Explanation
+    threshold_explanation:
+      header: "&eThreshold Explanation:"
+      sensitive: "&f0.5 = Hide when 50% blocked (More Sensitive)"
+      recommended: "&f0.7 = Hide when 70% blocked (Recommended)"
+      strict: "&f0.8 = Hide when 80% blocked (Stricter)"
+      very_strict: "&f0.9 = Hide when 90% blocked (Very Strict)"
+      extreme: "&f1.0 = Hide when 4 consecutive blocks (Almost Complete Blocking)"
+    
+    # Usage Instructions
+    usage_header: "&eUsage:"
+    enable_usage: "&f/antiesp strict enable/disable - Enable/disable strict mode"
+    threshold_usage: "&f/antiesp strict threshold <0.0-1.0> - Set blocking threshold"
+    
+    # Error Messages
+    invalid_action: "&cInvalid parameter! Use enable/disable/threshold"
+    
+  # Language Command
+  language:
+    current: "&eCurrent Language: &f{language}"
+    supported: "&eSupported Languages: &f{languages}"
+    changed: "&aLanguage changed to: {language}"
+    not_supported: "&cUnsupported language: {language}"
+    usage: "&eUsage: /antiesp lang <language_code>"
+    
+  # Permission Errors
+  no_permission: "&cYou don't have permission to execute this command!"
+  player_only: "&cThis command can only be used by players!"
+  invalid_arguments: "&cInvalid arguments!"
+
+# Status Information
+status:
+  header: "&6=== AntiESP Status ==="
+  version: "&ePlugin Version: &f{version}"
+  author: "&eAuthor: &f{author}"
+  debug_mode: "&eDebug Mode: &f{status}"
+  check_interval: "&eCheck Interval: &f{interval} tick"
+  max_distance: "&eMax Distance: &f{distance} blocks"
+  min_distance: "&eMin Distance: &f{distance} blocks (Close Distance Exemption)"
+  packet_interception: "&ePacket Interception: &f{status}"
+  online_players: "&eOnline Players: &f{count}"
+  
+  # Strict Mode Status
+  strict_mode: "&eStrict Mode: &f{status}"
+  blocking_threshold: "&eBlocking Threshold: &f{threshold}%"
+  multi_angle_check: "&eMulti-Angle Check: &f{status}"
+  multi_angle_radius: "&eMulti-Angle Radius: &f{radius}"
+  use_eye_height: "&eEye Height Detection: &f{status}"
+
+# Statistics Information
+stats:
+  header: "&6=== Personal Statistics ==="
+  visible_players: "&eVisible Players: &f{count}"
+  hidden_players: "&eHidden Players: &f{count}"
+  total_checks: "&eTotal Checks: &f{count}"
+  last_update: "&eLast Update: &f{time}"
+
+# Plugin Information
+info:
+  header: "&6=== AntiESP Information ==="
+  description: "&eAntiESP is an anti-ESP plugin that calculates player line of sight in real-time"
+  description2: "&eto determine if there is a valid line of sight connection between players."
+  description3: "&eWhen line of sight is blocked, it hides players and intercepts packets that may expose positions."
+  
+  features:
+    header: "&eMain Features:"
+    real_time: "&f• Real-time line of sight detection"
+    packet_interception: "&f• Packet interception"
+    player_hiding: "&f• Player hiding/showing"
+    performance_optimization: "&f• Performance optimization"
+    close_distance_exemption: "&f• Close distance exemption"
+    multi_angle_detection: "&f• Multi-angle detection"
+    eye_height_detection: "&f• Eye height detection"
+
+# Debug Messages
+debug:
+  # Player Visibility Changes
+  player_visible: "&aPlayer {viewer} can now see {target}"
+  player_hidden: "&cPlayer {viewer} can no longer see {target}"
+  
+  # Line of Sight Detection
+  line_of_sight_clear: "&aLine of sight clear: {viewer} -> {target}"
+  line_of_sight_blocked: "&cLine of sight blocked: {viewer} -> {target}"
+  
+  # Distance Detection
+  distance_check: "&eDistance check: {viewer} -> {target} = {distance} blocks"
+  close_distance_exemption: "&aClose distance exemption: {viewer} -> {target} (Distance: {distance} blocks)"
+  
+  # Configuration Loading
+  config_loaded: "&aConfiguration file loaded successfully"
+  strict_mode_enabled: "&aStrict mode enabled - Blocking threshold: {threshold}%"
+  
+  # Manager Initialization
+  managers_initialized: "&aAll managers initialized successfully"
+  packet_manager_initialized: "&aPacket manager initialized (Using Bukkit API, Tab list compatible)"
+  visibility_manager_initialized: "&aVisibility manager initialized successfully"
+  player_manager_initialized: "&aPlayer manager initialized successfully"
+  
+  # Task Scheduling
+  scheduler_started: "&aScheduled task started, check interval: {interval} tick"
+  scheduler_stopped: "&cScheduled task stopped"
+  
+  # Error Handling
+  error_occurred: "&cError occurred: {error}"
+  visibility_update_error: "&cError occurred while updating visibility for player {player}: {error}"
+  line_of_sight_error: "&cError occurred during line of sight detection: {error}"
+
+# System Messages
+system:
+  # Plugin Enable/Disable
+  plugin_enabled: "&aAntiESP plugin enabled!"
+  plugin_disabled: "&cAntiESP plugin disabled!"
+  
+  # Configuration Related
+  config_created: "&aConfiguration file created"
+  config_reloaded: "&aConfiguration reloaded"
+  
+  # Performance Related
+  performance_warning: "&ePerformance warning: Check interval too short may affect server performance"
+  memory_usage: "&eMemory usage: {usage}MB"
+
+# Error Messages
+errors:
+  # General Errors
+  unknown_error: "&cUnknown error occurred"
+  configuration_error: "&cConfiguration error"
+  permission_denied: "&cPermission denied"
+  
+  # File Errors
+  file_not_found: "&cFile not found: {file}"
+  file_read_error: "&cFailed to read file: {file}"
+  file_write_error: "&cFailed to write file: {file}"
+  
+  # Network Errors
+  connection_failed: "&cConnection failed"
+  timeout: "&cConnection timeout"
+  
+  # Data Errors
+  invalid_data: "&cInvalid data"
+  data_corrupted: "&cData corrupted"
+  
+  # Player Related Errors
+  player_not_found: "&cPlayer not found: {player}"
+  player_offline: "&cPlayer offline: {player}"
+  player_not_online: "&cPlayer not online: {player}"
+
+# Success Messages
+success:
+  # Operation Success
+  operation_completed: "&aOperation completed"
+  settings_saved: "&aSettings saved"
+  data_updated: "&aData updated"
+  
+  # Player Operations
+  player_updated: "&aPlayer information updated"
+  visibility_updated: "&aVisibility updated"
+  
+  # System Operations
+  system_restarted: "&aSystem restarted"
+  cache_cleared: "&aCache cleared"

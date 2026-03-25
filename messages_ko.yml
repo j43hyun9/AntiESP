@@ -1,0 +1,254 @@
+# AntiESP 한국어 언어 파일
+# 플러그인 메시지 및 안내 텍스트
+
+# 플러그인 정보
+plugin:
+  name: "AntiESP"
+  description: "반투시 방지 플러그인"
+  version: "버전"
+  author: "제작자"
+  prefix: "&6[AntiESP] &r"
+
+# 공통 메시지
+common:
+  enabled: "활성화"
+  disabled: "비활성화"
+  on: "켜짐"
+  off: "꺼짐"
+  yes: "예"
+  no: "아니오"
+  success: "성공"
+  failed: "실패"
+  error: "오류"
+  warning: "경고"
+  info: "정보"
+  loading: "로딩 중..."
+  saving: "저장 중..."
+  reloading: "다시 로드 중..."
+
+# 명령어 메시지
+commands:
+  # 도움말 메시지
+  help:
+    header: "&6=== AntiESP 도움말 ==="
+    usage: "사용법"
+    description: "설명"
+    permission: "권한"
+    aliases: "별칭"
+
+    # 개별 명령어
+    reload:
+      description: "플러그인 설정을 다시 로드합니다"
+      usage: "/antiesp reload"
+
+    status:
+      description: "플러그인 상태를 확인합니다"
+      usage: "/antiesp status"
+
+    debug:
+      description: "디버그 모드를 전환합니다"
+      usage: "/antiesp debug <on|off>"
+
+    info:
+      description: "플러그인 정보를 확인합니다"
+      usage: "/antiesp info"
+
+    stats:
+      description: "개인 통계를 확인합니다"
+      usage: "/antiesp stats"
+
+    strict:
+      description: "엄격 모드 설정"
+      usage: "/antiesp strict <enable|disable|threshold>"
+
+    language:
+      description: "언어 설정"
+      usage: "/antiesp lang <언어코드>"
+
+  # 명령어 실행 결과
+  reload:
+    success: "&a설정이 다시 로드되었습니다!"
+    failed: "&c설정 로드 중 오류 발생: {error}"
+
+  debug:
+    enabled: "&a디버그 모드가 활성화되었습니다"
+    disabled: "&c디버그 모드가 비활성화되었습니다"
+    usage: "&c사용법: /antiesp debug <on|off>"
+
+  strict:
+    # 엄격 모드 상태
+    status_header: "&6=== 엄격 모드 설정 ==="
+    current_status: "&e현재 상태: &f{status}"
+    blocking_threshold: "&e차단 임계값: &f{threshold}%"
+    multi_angle_check: "&e다각도 감지: &f{status}"
+    multi_angle_radius: "&e다각도 반경: &f{radius}"
+
+    # 엄격 모드 조작
+    enabled: "&a엄격 모드가 활성화되었습니다"
+    disabled: "&c엄격 모드가 비활성화되었습니다"
+
+    # 임계값 설정
+    threshold_updated: "&a차단 임계값이 설정되었습니다: {threshold}%"
+    threshold_invalid: "&c임계값은 0.0에서 1.0 사이여야 합니다"
+    threshold_usage: "&c사용법: /antiesp strict threshold <0.0-1.0>"
+
+    # 임계값 설명
+    threshold_explanation:
+      header: "&e임계값 설명:"
+      sensitive: "&f0.5 = 50% 차단 시 숨김 (더 민감)"
+      recommended: "&f0.7 = 70% 차단 시 숨김 (권장)"
+      strict: "&f0.8 = 80% 차단 시 숨김 (더 엄격)"
+      very_strict: "&f0.9 = 90% 차단 시 숨김 (가장 엄격)"
+      extreme: "&f1.0 = 연속 4블록 차단 시 숨김 (거의 완전 차단)"
+
+    # 사용법 설명
+    usage_header: "&e사용법:"
+    enable_usage: "&f/antiesp strict enable/disable - 엄격 모드 활성화/비활성화"
+    threshold_usage: "&f/antiesp strict threshold <0.0-1.0> - 차단 임계값 설정"
+
+    # 오류 메시지
+    invalid_action: "&c잘못된 인수입니다! enable/disable/threshold를 사용하세요"
+
+  # 언어 명령어
+  language:
+    current: "&e현재 언어: &f{language}"
+    supported: "&e지원 언어: &f{languages}"
+    changed: "&a언어가 변경되었습니다: {language}"
+    not_supported: "&c지원하지 않는 언어입니다: {language}"
+    usage: "&e사용법: /antiesp lang <언어코드>"
+
+  # 권한 오류
+  no_permission: "&c이 명령어를 실행할 권한이 없습니다!"
+  player_only: "&c이 명령어는 플레이어만 사용할 수 있습니다!"
+  invalid_arguments: "&c인수가 잘못되었습니다!"
+
+# 상태 정보
+status:
+  header: "&6=== AntiESP 상태 ==="
+  version: "&e플러그인 버전: &f{version}"
+  author: "&e제작자: &f{author}"
+  debug_mode: "&e디버그 모드: &f{status}"
+  check_interval: "&e검사 간격: &f{interval} 틱"
+  max_distance: "&e최대 거리: &f{distance} 블록"
+  min_distance: "&e최소 거리: &f{distance} 블록 (근거리 면제)"
+  packet_interception: "&e패킷 차단: &f{status}"
+  online_players: "&e온라인 플레이어: &f{count}"
+
+  # 엄격 모드 상태
+  strict_mode: "&e엄격 모드: &f{status}"
+  blocking_threshold: "&e차단 임계값: &f{threshold}%"
+  multi_angle_check: "&e다각도 감지: &f{status}"
+  multi_angle_radius: "&e다각도 반경: &f{radius}"
+  use_eye_height: "&e눈 높이 감지: &f{status}"
+
+# 통계 정보
+stats:
+  header: "&6=== 개인 통계 ==="
+  visible_players: "&e표시 중인 플레이어: &f{count}"
+  hidden_players: "&e숨겨진 플레이어: &f{count}"
+  total_checks: "&e총 검사 횟수: &f{count}"
+  last_update: "&e마지막 업데이트: &f{time}"
+
+# 플러그인 정보
+info:
+  header: "&6=== AntiESP 정보 ==="
+  description: "&eAntiESP는 반투시 방지 플러그인으로, 실시간으로 플레이어 시선을 계산하여"
+  description2: "&e플레이어 간 유효한 시선이 존재하는지 판단합니다. 시선이 차단되면"
+  description3: "&e플레이어를 숨기고 위치를 노출할 수 있는 패킷을 차단합니다."
+
+  features:
+    header: "&e주요 기능:"
+    real_time: "&f• 실시간 시선 감지"
+    packet_interception: "&f• 패킷 차단"
+    player_hiding: "&f• 플레이어 숨김/표시"
+    performance_optimization: "&f• 성능 최적화"
+    close_distance_exemption: "&f• 근거리 면제"
+    multi_angle_detection: "&f• 다각도 감지"
+    eye_height_detection: "&f• 눈 높이 감지"
+
+# 디버그 메시지
+debug:
+  # 플레이어 가시성 변화
+  player_visible: "&a플레이어 {viewer}가 이제 {target}을 볼 수 있습니다"
+  player_hidden: "&c플레이어 {viewer}가 이제 {target}을 볼 수 없습니다"
+
+  # 시선 감지
+  line_of_sight_clear: "&a시선 확보: {viewer} -> {target}"
+  line_of_sight_blocked: "&c시선 차단: {viewer} -> {target}"
+
+  # 거리 감지
+  distance_check: "&e거리 확인: {viewer} -> {target} = {distance}블록"
+  close_distance_exemption: "&a근거리 면제: {viewer} -> {target} (거리: {distance}블록)"
+
+  # 설정 로드
+  config_loaded: "&a설정 파일 로드 완료"
+  strict_mode_enabled: "&a엄격 모드 활성화됨 - 차단 임계값: {threshold}%"
+
+  # 매니저 초기화
+  managers_initialized: "&a모든 매니저 초기화 완료"
+  packet_manager_initialized: "&a패킷 매니저 초기화 완료 (Bukkit API 사용, 탭 목록 호환)"
+  visibility_manager_initialized: "&a시선 매니저 초기화 완료"
+  player_manager_initialized: "&a플레이어 매니저 초기화 완료"
+
+  # 스케줄러
+  scheduler_started: "&a스케줄러 시작됨, 검사 간격: {interval} 틱"
+  scheduler_stopped: "&c스케줄러 중지됨"
+
+  # 오류 처리
+  error_occurred: "&c오류 발생: {error}"
+  visibility_update_error: "&c플레이어 {player}의 가시성 업데이트 중 오류 발생: {error}"
+  line_of_sight_error: "&c시선 감지 중 오류 발생: {error}"
+
+# 시스템 메시지
+system:
+  # 플러그인 활성화/비활성화
+  plugin_enabled: "&aAntiESP 플러그인이 활성화되었습니다!"
+  plugin_disabled: "&cAntiESP 플러그인이 비활성화되었습니다!"
+
+  # 설정 관련
+  config_created: "&a설정 파일이 생성되었습니다"
+  config_reloaded: "&a설정이 다시 로드되었습니다"
+
+  # 성능 관련
+  performance_warning: "&e성능 경고: 감지 간격이 너무 짧으면 서버 성능에 영향을 줄 수 있습니다"
+  memory_usage: "&e메모리 사용량: {usage}MB"
+
+# 오류 메시지
+errors:
+  # 일반 오류
+  unknown_error: "&c알 수 없는 오류가 발생했습니다"
+  configuration_error: "&c설정 오류"
+  permission_denied: "&c권한이 부족합니다"
+
+  # 파일 오류
+  file_not_found: "&c파일을 찾을 수 없습니다: {file}"
+  file_read_error: "&c파일 읽기 실패: {file}"
+  file_write_error: "&c파일 쓰기 실패: {file}"
+
+  # 네트워크 오류
+  connection_failed: "&c연결 실패"
+  timeout: "&c연결 시간 초과"
+
+  # 데이터 오류
+  invalid_data: "&c데이터가 유효하지 않습니다"
+  data_corrupted: "&c데이터가 손상되었습니다"
+
+  # 플레이어 관련 오류
+  player_not_found: "&c플레이어를 찾을 수 없습니다: {player}"
+  player_offline: "&c플레이어가 오프라인 상태입니다: {player}"
+  player_not_online: "&c플레이어가 온라인 상태가 아닙니다: {player}"
+
+# 성공 메시지
+success:
+  # 작업 성공
+  operation_completed: "&a작업이 완료되었습니다"
+  settings_saved: "&a설정이 저장되었습니다"
+  data_updated: "&a데이터가 업데이트되었습니다"
+
+  # 플레이어 작업
+  player_updated: "&a플레이어 정보가 업데이트되었습니다"
+  visibility_updated: "&a가시성이 업데이트되었습니다"
+
+  # 시스템 작업
+  system_restarted: "&a시스템이 재시작되었습니다"
+  cache_cleared: "&a캐시가 정리되었습니다"

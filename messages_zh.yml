@@ -1,0 +1,254 @@
+# AntiESP 中文语言文件
+# 插件消息和提示文本
+
+# 插件信息
+plugin:
+  name: "AntiESP"
+  description: "反透视插件"
+  version: "版本"
+  author: "作者"
+  prefix: "&6[AntiESP] &r"
+
+# 通用消息
+common:
+  enabled: "启用"
+  disabled: "禁用"
+  on: "开启"
+  off: "关闭"
+  yes: "是"
+  no: "否"
+  success: "成功"
+  failed: "失败"
+  error: "错误"
+  warning: "警告"
+  info: "信息"
+  loading: "加载中..."
+  saving: "保存中..."
+  reloading: "重新加载中..."
+
+# 命令消息
+commands:
+  # 帮助消息
+  help:
+    header: "&6=== AntiESP 帮助 ==="
+    usage: "用法"
+    description: "描述"
+    permission: "权限"
+    aliases: "别名"
+    
+    # 具体命令
+    reload:
+      description: "重新加载插件配置"
+      usage: "/antiesp reload"
+      
+    status:
+      description: "查看插件状态"
+      usage: "/antiesp status"
+      
+    debug:
+      description: "切换调试模式"
+      usage: "/antiesp debug <on|off>"
+      
+    info:
+      description: "查看插件信息"
+      usage: "/antiesp info"
+      
+    stats:
+      description: "查看个人统计"
+      usage: "/antiesp stats"
+      
+    strict:
+      description: "严格模式设置"
+      usage: "/antiesp strict <enable|disable|threshold>"
+      
+    language:
+      description: "语言设置"
+      usage: "/antiesp lang <语言代码>"
+      
+  # 命令执行结果
+  reload:
+    success: "&a配置已重新加载！"
+    failed: "&c重载配置时发生错误: {error}"
+    
+  debug:
+    enabled: "&a调试模式已启用"
+    disabled: "&c调试模式已禁用"
+    usage: "&c用法: /antiesp debug <on|off>"
+    
+  strict:
+    # 严格模式状态
+    status_header: "&6=== 严格模式设置 ==="
+    current_status: "&e当前状态: &f{status}"
+    blocking_threshold: "&e阻挡阈值: &f{threshold}%"
+    multi_angle_check: "&e多角度检测: &f{status}"
+    multi_angle_radius: "&e多角度半径: &f{radius}"
+    
+    # 严格模式操作
+    enabled: "&a严格模式已启用"
+    disabled: "&c严格模式已禁用"
+    
+    # 阈值设置
+    threshold_updated: "&a阻挡阈值已设置为: {threshold}%"
+    threshold_invalid: "&c阈值必须在0.0到1.0之间"
+    threshold_usage: "&c用法: /antiesp strict threshold <0.0-1.0>"
+    
+    # 阈值说明
+    threshold_explanation:
+      header: "&e阈值说明:"
+      sensitive: "&f0.5 = 50%阻挡就隐藏（更敏感）"
+      recommended: "&f0.7 = 70%阻挡才隐藏（推荐）"
+      strict: "&f0.8 = 80%阻挡才隐藏（更严格）"
+      very_strict: "&f0.9 = 90%阻挡才隐藏（最严格）"
+      extreme: "&f1.0 = 连续4格阻挡才隐藏（几乎完全阻挡）"
+    
+    # 用法说明
+    usage_header: "&e用法:"
+    enable_usage: "&f/antiesp strict enable/disable - 启用/禁用严格模式"
+    threshold_usage: "&f/antiesp strict threshold <0.0-1.0> - 设置阻挡阈值"
+    
+    # 错误消息
+    invalid_action: "&c无效的参数！使用 enable/disable/threshold"
+    
+  # 语言命令
+  language:
+    current: "&e当前语言: &f{language}"
+    supported: "&e支持的语言: &f{languages}"
+    changed: "&a语言已切换为: {language}"
+    not_supported: "&c不支持的语言: {language}"
+    usage: "&e用法: /antiesp lang <语言代码>"
+    
+  # 权限错误
+  no_permission: "&c您没有权限执行此命令！"
+  player_only: "&c此命令只能由玩家使用！"
+  invalid_arguments: "&c参数无效！"
+  
+# 状态信息
+status:
+  header: "&6=== AntiESP 状态 ==="
+  version: "&e插件版本: &f{version}"
+  author: "&e作者: &f{author}"
+  debug_mode: "&e调试模式: &f{status}"
+  check_interval: "&e检查间隔: &f{interval} tick"
+  max_distance: "&e最大距离: &f{distance} 格"
+  min_distance: "&e最小距离: &f{distance} 格（近距离豁免）"
+  packet_interception: "&e数据包拦截: &f{status}"
+  online_players: "&e在线玩家: &f{count}"
+  
+  # 严格模式状态
+  strict_mode: "&e严格模式: &f{status}"
+  blocking_threshold: "&e阻挡阈值: &f{threshold}%"
+  multi_angle_check: "&e多角度检测: &f{status}"
+  multi_angle_radius: "&e多角度半径: &f{radius}"
+  use_eye_height: "&e眼睛高度检测: &f{status}"
+
+# 统计信息
+stats:
+  header: "&6=== 个人统计 ==="
+  visible_players: "&e可见玩家: &f{count}"
+  hidden_players: "&e隐藏玩家: &f{count}"
+  total_checks: "&e总检查次数: &f{count}"
+  last_update: "&e最后更新: &f{time}"
+
+# 插件信息
+info:
+  header: "&6=== AntiESP 信息 ==="
+  description: "&eAntiESP 是一个反透视插件，通过实时计算玩家视线"
+  description2: "&e来判断玩家之间是否存在有效视线连接。当视线被阻挡时，"
+  description3: "&e会隐藏玩家并拦截可能暴露位置的数据包。"
+  
+  features:
+    header: "&e主要功能:"
+    real_time: "&f• 实时视线检测"
+    packet_interception: "&f• 数据包拦截"
+    player_hiding: "&f• 玩家隐藏/显示"
+    performance_optimization: "&f• 性能优化"
+    close_distance_exemption: "&f• 近距离豁免"
+    multi_angle_detection: "&f• 多角度检测"
+    eye_height_detection: "&f• 眼睛高度检测"
+
+# 调试消息
+debug:
+  # 玩家可见性变化
+  player_visible: "&a玩家 {viewer} 现在可以看到 {target}"
+  player_hidden: "&c玩家 {viewer} 现在看不到 {target}"
+  
+  # 视线检测
+  line_of_sight_clear: "&a视线畅通: {viewer} -> {target}"
+  line_of_sight_blocked: "&c视线被阻挡: {viewer} -> {target}"
+  
+  # 距离检测
+  distance_check: "&e距离检查: {viewer} -> {target} = {distance}格"
+  close_distance_exemption: "&a近距离豁免: {viewer} -> {target} (距离: {distance}格)"
+  
+  # 配置加载
+  config_loaded: "&a配置文件加载完成"
+  strict_mode_enabled: "&a严格模式已启用 - 阻挡阈值: {threshold}%"
+  
+  # 管理器初始化
+  managers_initialized: "&a所有管理器初始化完成"
+  packet_manager_initialized: "&a数据包管理器初始化完成（使用Bukkit API，Tab栏兼容）"
+  visibility_manager_initialized: "&a视线管理器初始化完成"
+  player_manager_initialized: "&a玩家管理器初始化完成"
+  
+  # 任务调度
+  scheduler_started: "&a定时任务已启动，检查间隔: {interval} tick"
+  scheduler_stopped: "&c定时任务已停止"
+  
+  # 错误处理
+  error_occurred: "&c发生错误: {error}"
+  visibility_update_error: "&c更新玩家 {player} 的可见性时发生错误: {error}"
+  line_of_sight_error: "&c视线检测时发生错误: {error}"
+
+# 系统消息
+system:
+  # 插件启用/禁用
+  plugin_enabled: "&aAntiESP 插件已启用！"
+  plugin_disabled: "&cAntiESP 插件已禁用！"
+  
+  # 配置相关
+  config_created: "&a配置文件已创建"
+  config_reloaded: "&a配置已重新加载"
+  
+  # 性能相关
+  performance_warning: "&e性能警告: 检测间隔过短可能影响服务器性能"
+  memory_usage: "&e内存使用: {usage}MB"
+
+# 错误消息
+errors:
+  # 通用错误
+  unknown_error: "&c发生未知错误"
+  configuration_error: "&c配置错误"
+  permission_denied: "&c权限不足"
+  
+  # 文件错误
+  file_not_found: "&c文件未找到: {file}"
+  file_read_error: "&c读取文件失败: {file}"
+  file_write_error: "&c写入文件失败: {file}"
+  
+  # 网络错误
+  connection_failed: "&c连接失败"
+  timeout: "&c连接超时"
+  
+  # 数据错误
+  invalid_data: "&c数据无效"
+  data_corrupted: "&c数据损坏"
+  
+  # 玩家相关错误
+  player_not_found: "&c玩家未找到: {player}"
+  player_offline: "&c玩家离线: {player}"
+  player_not_online: "&c玩家不在线: {player}"
+
+# 成功消息
+success:
+  # 操作成功
+  operation_completed: "&a操作完成"
+  settings_saved: "&a设置已保存"
+  data_updated: "&a数据已更新"
+  
+  # 玩家操作
+  player_updated: "&a玩家信息已更新"
+  visibility_updated: "&a可见性已更新"
+  
+  # 系统操作
+  system_restarted: "&a系统已重启"
+  cache_cleared: "&a缓存已清理"

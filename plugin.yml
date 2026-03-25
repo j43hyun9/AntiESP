@@ -1,0 +1,22 @@
+name: AntiESP
+version: '1.0.0'
+main: com.Antiesp.AntiEsp.AntiEsp
+api-version: 1.21
+author: 114514h
+description: A reverse perspective plugin designed specifically for Minecraft servers - 마인크래프트 서버를 위한 반투시 방지 플러그인
+website: https://github.com/114514h/AntiESP
+
+commands:
+  antiesp:
+    description: AntiESP 플러그인 메인 명령어
+    usage: /antiesp <reload|status|debug>
+    permission: antiesp.admin
+    aliases: [ae, esp]
+
+permissions:
+  antiesp.admin:
+    description: AntiESP 관리자 권한
+    default: op
+  antiesp.bypass:
+    description: 반투시 감지 우회
+    default: false

@@ -1,0 +1,132 @@
+#                     _   _ ______  _____ _____
+#         /\         | | (_)  ____|/ ____|  __ \
+#        /  \   _ __ | |_ _| |__  | (___ | |__) |
+#       / /\ \ | '_ \| __| |  __|  \___ \|  ___/
+#      / ____ \| | | | |_| | |____ ____) | |
+#     /_/    \_\_| |_|\__|_|______|_____/|_|
+#
+#
+# AntiESP 설정 파일
+# 반투시 방지 플러그인 설정
+
+# 디버그 모드 - 활성화 시 콘솔에 자세한 정보를 출력합니다
+debug: false
+
+# 검사 간격 - 시선 검사 간격 (틱, 20틱 = 1초)
+# 권장값: 1-5, 값이 작을수록 검사가 자주 일어나지만 성능 소모가 큽니다
+check-interval: 2
+
+# 최대 감지 거리 - 이 거리를 초과한 플레이어는 감지하지 않습니다 (블록)
+# 권장값: 32-128, 값이 클수록 감지 범위가 넓어지지만 성능 소모가 큽니다
+max-distance: 64.0
+
+# 최소 감지 거리 - 근거리 면제 (블록)
+# 이 값 이하의 거리에 있는 플레이어는 반투시 처리를 하지 않습니다
+# 권장값: 3-10, 값이 클수록 근거리 면제 범위가 넓어집니다
+min-distance: 5.0
+
+# 패킷 차단 활성화 여부 - 비활성화 시 시선 감지만 수행하고 패킷은 차단하지 않습니다
+enable-packet-interception: true
+
+# 팀 면제 설정
+team-exemption:
+  # 팀 면제 활성화 여부 - 같은 팀 플레이어 간에는 반투시 처리를 하지 않습니다
+  enabled: true
+
+  # 팀 감지 방법
+  # "scoreboard" - 점수판 팀 시스템 사용
+  # "permission" - 권한 시스템 사용 (antiesp.team.<teamname>)
+  # "both" - 점수판과 권한 모두 확인
+  detection-method: "scoreboard"
+
+# 성능 최적화 설정
+performance:
+  # 비동기 처리 - 시선 감지에 비동기 처리를 사용할지 여부
+  async-processing: true
+
+  # 일괄 처리 - 한 번에 일괄 처리할 플레이어 수
+  batch-size: 10
+
+  # 캐시 시간 - 위치 캐시의 유효 시간 (밀리초)
+  cache-time: 1000
+
+# 투명 블록 설정
+transparent-blocks:
+  # 사용자 정의 투명 블록 목록
+  custom:
+    - GLASS
+    - GLASS_PANE
+    - IRON_BARS
+    - CHAIN
+    - LADDER
+    - VINE
+    - WATER
+    - LAVA
+    - TORCH
+    - WALL_TORCH
+    - REDSTONE_TORCH
+    - REDSTONE_WALL_TORCH
+    - TRIPWIRE
+    - TRIPWIRE_HOOK
+    - COBWEB
+    - SCAFFOLDING
+    - BARRIER
+    - STRUCTURE_VOID
+    - LIGHT
+
+# 메시지 설정
+messages:
+  # 플러그인 활성화 메시지
+  plugin-enabled: "&aAntiESP 플러그인이 활성화되었습니다!"
+
+  # 플러그인 비활성화 메시지
+  plugin-disabled: "&cAntiESP 플러그인이 비활성화되었습니다!"
+
+  # 설정 리로드 메시지
+  config-reloaded: "&a설정이 다시 로드되었습니다!"
+
+  # 권한 부족 메시지
+  no-permission: "&c이 명령어를 사용할 권한이 없습니다!"
+
+  # 디버그 모드 전환 메시지
+  debug-enabled: "&a디버그 모드가 활성화되었습니다"
+  debug-disabled: "&c디버그 모드가 비활성화되었습니다"
+
+# 고급 설정
+advanced:
+  # 레이캐스트 정밀도 - 값이 작을수록 정밀하지만 성능 소모가 큽니다
+  raycast-precision: 0.05
+
+  # 최대 레이캐스트 거리
+  max-raycast-distance: 128.0
+
+  # 엔티티 충돌 검사 여부
+  check-entity-collision: false
+
+  # 액체 블록 검사 여부
+  check-liquid-blocks: true
+
+  # 반투명 블록 검사 여부
+  check-semi-transparent: true
+
+  # 엄격 모드 설정
+  strict-mode:
+    # 엄격 모드 활성화 여부 - 플레이어가 블록에 완전히 가려져야 숨깁니다
+    enabled: true
+
+    # 시선 감지에 눈 높이를 사용할지 여부
+    use-eye-height: true
+
+    # 차단 임계값 - 경로가 차단된 비율이 이 값을 초과하면 플레이어를 숨깁니다 (0.0-1.0)
+    # 0.5 = 50% 경로 차단 시 숨김 (더 민감)
+    # 0.7 = 70% 경로 차단 시 숨김 (권장)
+    # 0.8 = 80% 경로 차단 시 숨김 (더 엄격)
+    # 0.9 = 90% 경로 차단 시 숨김 (가장 엄격)
+    # 1.0 = 연속 4블록 차단 시 숨김 (거의 완전 차단)
+    blocking-threshold: 0.7
+
+    # 다각도 감지 사용 여부 - 플레이어 주변의 여러 지점을 검사합니다
+    multi-angle-check: true
+
+    # 다각도 감지 반경
+    multi-angle-radius: 0.3
