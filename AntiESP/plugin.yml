@@ -1,0 +1,22 @@
+name: AntiESP
+version: '1.0.0'
+main: com.Antiesp.AntiEsp.AntiEsp
+api-version: 1.21
+author: 114514h
+description: A reverse perspective plugin designed specifically for Minecraft servers一个专为Minecraft服务器设计的反透视插件
+website: https://github.com/114514h/AntiESP
+
+commands:
+  antiesp:
+    description: AntiESP插件主命令
+    usage: /antiesp <reload|status|debug>
+    permission: antiesp.admin
+    aliases: [ae, esp]
+
+permissions:
+  antiesp.admin:
+    description: AntiESP管理员权限
+    default: op
+  antiesp.bypass:
+    description: 绕过反透视检测
+    default: false

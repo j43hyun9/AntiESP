@@ -1,0 +1,132 @@
+#                     _   _ ______  _____ _____
+#         /\         | | (_)  ____|/ ____|  __ \
+#        /  \   _ __ | |_ _| |__  | (___ | |__) |
+#       / /\ \ | '_ \| __| |  __|  \___ \|  ___/
+#      / ____ \| | | | |_| | |____ ____) | |
+#     /_/    \_\_| |_|\__|_|______|_____/|_|
+#
+#
+# AntiESP 配置文件
+# 反透视插件配置
+
+# 调试模式 - 启用后会在控制台输出详细信息
+debug: false
+
+# 检查间隔 - 视线检查的间隔时间（tick，20tick = 1秒）
+# 建议值: 1-5，数值越小检查越频繁，性能消耗越大
+check-interval: 2
+
+# 最大检测距离 - 超过此距离的玩家不会被检测（格）
+# 建议值: 32-128，数值越大检测范围越大，性能消耗越大
+max-distance: 64.0
+
+# 最小检测距离 - 近距离豁免（格）
+# 当玩家距离小于等于此值时，不进行反透视处理
+# 建议值: 3-10，数值越大近距离豁免范围越大
+min-distance: 5.0
+
+# 是否启用数据包拦截 - 禁用后只进行视线检测，不拦截数据包
+enable-packet-interception: true
+
+# 队伍豁免设置
+team-exemption:
+  # 是否启用队伍豁免 - 同队玩家之间不进行反透视处理
+  enabled: true
+  
+  # 队伍检测方法
+  # "scoreboard" - 使用计分板队伍系统
+  # "permission" - 使用权限系统 (antiesp.team.<teamname>)
+  # "both" - 同时检查计分板和权限
+  detection-method: "scoreboard"
+
+# 性能优化设置
+performance:
+  # 异步处理 - 是否使用异步处理视线检测
+  async-processing: true
+  
+  # 批量处理 - 每次批量处理的玩家数量
+  batch-size: 10
+  
+  # 缓存时间 - 位置缓存的有效时间（毫秒）
+  cache-time: 1000
+
+# 透明方块设置
+transparent-blocks:
+  # 自定义透明方块列表
+  custom:
+    - GLASS
+    - GLASS_PANE
+    - IRON_BARS
+    - CHAIN
+    - LADDER
+    - VINE
+    - WATER
+    - LAVA
+    - TORCH
+    - WALL_TORCH
+    - REDSTONE_TORCH
+    - REDSTONE_WALL_TORCH
+    - TRIPWIRE
+    - TRIPWIRE_HOOK
+    - COBWEB
+    - SCAFFOLDING
+    - BARRIER
+    - STRUCTURE_VOID
+    - LIGHT
+
+# 消息设置
+messages:
+  # 插件启用消息
+  plugin-enabled: "&aAntiESP 插件已启用！"
+  
+  # 插件禁用消息
+  plugin-disabled: "&cAntiESP 插件已禁用！"
+  
+  # 配置重载消息
+  config-reloaded: "&a配置已重新加载！"
+  
+  # 权限不足消息
+  no-permission: "&c你没有权限使用此命令！"
+  
+  # 调试模式切换消息
+  debug-enabled: "&a调试模式已启用"
+  debug-disabled: "&c调试模式已禁用"
+
+# 高级设置
+advanced:
+  # 射线投射精度 - 数值越小精度越高，性能消耗越大
+  raycast-precision: 0.05
+  
+  # 最大射线投射距离
+  max-raycast-distance: 128.0
+  
+  # 是否检查实体碰撞
+  check-entity-collision: false
+  
+  # 是否检查液体方块
+  check-liquid-blocks: true
+  
+  # 是否检查半透明方块
+  check-semi-transparent: true
+  
+  # 严格模式设置
+  strict-mode:
+    # 是否启用严格模式 - 要求玩家完全被方块遮挡才隐藏
+    enabled: true
+    
+    # 是否使用眼睛高度进行视线检测
+    use-eye-height: true
+    
+    # 阻挡阈值 - 路径被阻挡的百分比，超过此值才隐藏玩家 (0.0-1.0)
+    # 0.5 = 50%的路径被阻挡就隐藏玩家（更敏感）
+    # 0.7 = 70%的路径被阻挡才隐藏玩家（推荐）
+    # 0.8 = 80%的路径被阻挡才隐藏玩家（更严格）
+    # 0.9 = 90%的路径被阻挡才隐藏玩家（最严格）
+    # 1.0 = 连续4格阻挡才隐藏玩家（几乎完全阻挡）
+    blocking-threshold: 0.7
+    
+    # 是否使用多角度检测 - 检查玩家周围的多个点
+    multi-angle-check: true
+    
+    # 多角度检测的半径
+    multi-angle-radius: 0.3
